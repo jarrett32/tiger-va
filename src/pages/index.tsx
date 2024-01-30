@@ -1,5 +1,6 @@
 import Head from "next/head";
 import Link from "next/link";
+import Navbar from "~/components/Navbar";
 
 import { api } from "~/utils/api";
 
@@ -14,7 +15,11 @@ export default function Home() {
         <meta name="" content={SEODescription} />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className="flex min-h-screen flex-col items-center justify-center bg-gradient-to-b from-[#2e026d] to-[#15162c]"></main>
+      <main className="min-h-screen flex-col bg-gradient-to-b from-[#2e026d] to-[#15162c]">
+        <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+          <Navbar />
+        </div>
+      </main>
     </>
   );
 }
