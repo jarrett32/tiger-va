@@ -13,7 +13,8 @@ const Navbar: React.FC = () => {
         {/* <img src="/logo.png" alt="Logo" className="mr-6 h-8" /> */}
 
         {/* Desktop Menu */}
-        <div className="hidden space-x-8 md:flex">
+        <div className="hidden items-center space-x-4 md:flex">
+          <h1 className="mr-4 text-2xl font-bold text-primary">Tiger VA</h1>
           <MenuHeader text="Use Cases" />
           <MenuHeader text="Solutions" />
           <MenuHeader text="Pricing" />

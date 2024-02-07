@@ -1,13 +1,14 @@
 import { UserCircleIcon } from "@heroicons/react/24/solid";
 import Head from "next/head";
 import { useState } from "react";
+import CTA from "~/components/CTA";
 import Card, { DisclosureCard } from "~/components/Card";
+import Duplex from "~/components/Duplex";
 import Footer from "~/components/Footer";
+import LogoBanner from "~/components/LogoBanner";
 import Navbar from "~/components/Navbar";
 import Section from "~/components/Section";
 import { Button } from "~/components/ui/button";
-
-import { api } from "~/utils/api";
 
 export default function Home() {
   const SEOTitle = "Virtual Assistant | Tiger";
@@ -53,6 +54,8 @@ export default function Home() {
               </div>
             </div>
           </Section>
+
+          <LogoBanner />
 
           {/* Card Section */}
           <Section>
@@ -141,6 +144,38 @@ export default function Home() {
               </DisclosureCard>
             </div>
           </Section>
+          <CTA />
+          <Duplex />
+          <Section>
+            <div className="bg-light-100">
+              <div className="text-center">
+                <h2 className="mb-6 text-3xl font-bold text-foreground">
+                  What Our Customers Say
+                </h2>
+                <div className="flex flex-col items-center justify-center gap-4 md:flex-row">
+                  <blockquote className="rounded-lg bg-white p-4 shadow">
+                    <p className="text-secondary-foreground">
+                      "This product has changed the way we do business. Highly
+                      recommend!"
+                    </p>
+                    <footer className="mt-2 font-semibold text-foreground">
+                      - Alex Smith
+                    </footer>
+                  </blockquote>
+                  <blockquote className="rounded-lg bg-white p-4 shadow">
+                    <p className="text-secondary-foreground">
+                      "A must-have tool for anyone looking to improve their
+                      workflow!"
+                    </p>
+                    <footer className="mt-2 font-semibold text-foreground">
+                      - Jamie Doe
+                    </footer>
+                  </blockquote>
+                </div>
+              </div>
+            </div>
+          </Section>
+          <LogoBanner />
         </div>
       </main>
       <Footer />

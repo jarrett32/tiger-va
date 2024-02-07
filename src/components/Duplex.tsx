@@ -1,0 +1,31 @@
+import React from "react";
+import Section from "./Section";
+
+const Duplex = () => {
+  return (
+    <Section>
+      <div className="flex flex-col justify-between gap-8 md:flex-row">
+        <div className="w-full md:w-1/2">
+          <h2 className="mb-4 text-2xl font-bold text-foreground">
+            Innovative Design
+          </h2>
+          <p className="text-secondary-foreground">
+            Discover the seamless integration of aesthetics and functionality
+            with our cutting-edge design approach.
+          </p>
+        </div>
+        <div className="w-full md:w-1/2">
+          <h2 className="mb-4 text-2xl font-bold text-foreground">
+            Unmatched Performance
+          </h2>
+          <p className="text-secondary-foreground">
+            Experience unparalleled efficiency and speed with our advanced
+            technology solutions.
+          </p>
+        </div>
+      </div>
+    </Section>
+  );
+};
+
+export default Duplex;
