@@ -1,16 +1,22 @@
 import { UserCircleIcon } from "@heroicons/react/24/solid";
 import Head from "next/head";
-import Link from "next/link";
-import Button from "~/components/Button";
-import Card from "~/components/Card";
+import { useState } from "react";
+import Card, { DisclosureCard } from "~/components/Card";
+import Footer from "~/components/Footer";
 import Navbar from "~/components/Navbar";
 import Section from "~/components/Section";
+import { Button } from "~/components/ui/button";
 
 import { api } from "~/utils/api";
 
 export default function Home() {
   const SEOTitle = "Virtual Assistant | Tiger";
   const SEODescription = "";
+  const [openCard, setOpenCard] = useState<string | null>(null);
+
+  const handleToggle = (cardTitle: string) => {
+    setOpenCard(openCard === cardTitle ? null : cardTitle);
+  };
 
   return (
     <>
@@ -19,29 +25,21 @@ export default function Home() {
         <meta name="" content={SEODescription} />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className="min-h-screen flex-col bg-gradient-to-b from-[#2e026d] to-[#15162c]">
+      <main className="min-h-screen flex-col bg-white">
+        <Navbar />
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
-          <Navbar />
           {/* First Section */}
           <Section>
             <div className="flex flex-col items-center md:flex-row md:text-left">
               <div className="ml-16 w-full space-y-2 md:ml-0 md:flex-1 md:space-y-4">
-                <div className="text-4xl font-bold text-white">Header</div>
-                <p className="text-lg text-gray-300">
+                <div className="text-4xl font-bold text-foreground">Header</div>
+                <p className="text-lg text-secondary-foreground">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
                   vitae nibh ut dolor aliquet gravida.{" "}
                 </p>
                 <div className="flex flex-row items-center justify-start space-x-4">
-                  <Button
-                    text="Get Started"
-                    link="get-started"
-                    className="bg-blue-500"
-                  />
-                  <Button
-                    text="Pricing"
-                    link="pricing"
-                    className="border-secondary border bg-transparent"
-                  />
+                  <Button>Get Started</Button>
+                  <Button variant={"outline"}>Pricing</Button>
                 </div>
               </div>
 
@@ -91,8 +89,61 @@ export default function Home() {
               />
             </div>
           </Section>
+          <Section>
+            <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
+              <DisclosureCard
+                title="Disclosure Card 1"
+                onToggle={() => handleToggle("Disclosure Card 1")}
+              >
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit...
+                </p>
+              </DisclosureCard>
+              <DisclosureCard
+                title="Disclosure Card 2"
+                onToggle={() => handleToggle("Disclosure Card 2")}
+              >
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit...
+                </p>
+              </DisclosureCard>
+              <DisclosureCard
+                title="Disclosure Card 2"
+                onToggle={() => handleToggle("Disclosure Card 2")}
+              >
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit...
+                </p>
+              </DisclosureCard>
+              <DisclosureCard
+                title="Disclosure Card 2"
+                onToggle={() => handleToggle("Disclosure Card 2")}
+              >
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit...
+                </p>
+              </DisclosureCard>
+              <DisclosureCard
+                title="Disclosure Card 2"
+                onToggle={() => handleToggle("Disclosure Card 2")}
+              >
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit...
+                </p>
+              </DisclosureCard>
+              <DisclosureCard
+                title="Disclosure Card 2"
+                onToggle={() => handleToggle("Disclosure Card 2")}
+              >
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit...
+                </p>
+              </DisclosureCard>
+            </div>
+          </Section>
         </div>
       </main>
+      <Footer />
     </>
   );
 }

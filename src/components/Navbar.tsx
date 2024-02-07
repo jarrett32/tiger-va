@@ -1,14 +1,14 @@
 import { Menu } from "@headlessui/react";
 import { Bars3Icon } from "@heroicons/react/24/solid";
 import React, { useState } from "react";
-import Button from "./Button";
+import { Button } from "./ui/button";
 
 const Navbar: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <nav className="flex items-center justify-start bg-transparent px-6 py-4 md:justify-between">
-      <div className="flex items-center">
+    <nav className="mx-auto flex max-w-4xl items-center justify-start bg-white px-6 py-4 md:justify-between">
+      <div className="items-center">
         {/* Logo Placeholder */}
         {/* <img src="/logo.png" alt="Logo" className="mr-6 h-8" /> */}
 
@@ -23,7 +23,7 @@ const Navbar: React.FC = () => {
       <div className="md:hidden">
         <Menu as="div" className="relative inline-block text-left">
           <Menu.Button onClick={() => setIsMenuOpen(!isMenuOpen)}>
-            <Bars3Icon className="h-6 w-6 text-white" />
+            <Bars3Icon className="h-6 w-6 text-foreground" />
           </Menu.Button>
           {isMenuOpen && (
             <Menu.Items className="absolute left-0 mt-2 w-60 origin-top-left divide-y divide-gray-100 rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
@@ -31,22 +31,18 @@ const Navbar: React.FC = () => {
                 <MenuHeader text="Use Cases" />
                 <MenuHeader text="Solutions" />
                 <MenuHeader text="Pricing" />
-                <Button
-                  text="Get Started"
-                  link="get-started"
-                  className="w-full bg-blue-200 text-black"
-                />
+                <Button className="w-full" variant={"accent"}>
+                  Get Started
+                </Button>
               </div>
             </Menu.Items>
           )}
         </Menu>
       </div>
 
-      <Button
-        text="Get Started"
-        link="get-started"
-        className="hidden md:inline-block"
-      />
+      <Button variant={"accent"} className="hidden md:inline-block">
+        Get Started
+      </Button>
     </nav>
   );
 };
@@ -59,7 +55,7 @@ const MenuHeader: React.FC<MenuHeaderProps> = ({ text }) => {
   return (
     <a
       href="#"
-      className="w-full text-black transition duration-300 ease-in-out hover:text-gray-300 md:w-[100px] md:text-white"
+      className="w-full font-bold text-primary transition duration-300 ease-in-out hover:text-primary/40 md:w-[100px]"
     >
       {text}
     </a>
