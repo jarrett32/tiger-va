@@ -15,9 +15,9 @@ const Navbar: React.FC = () => {
         {/* Desktop Menu */}
         <div className="hidden items-center space-x-4 md:flex">
           <h1 className="mr-4 text-2xl font-bold text-primary">Tiger VA</h1>
-          <MenuHeader text="Use Cases" />
-          <MenuHeader text="Solutions" />
-          <MenuHeader text="Pricing" />
+          <MenuHeader text="Features" link="#features" />
+          <MenuHeader text="Solutions" link="#solutions" />
+          <MenuHeader text="Pricing" link="#pricing" />
         </div>
       </div>
 
@@ -50,12 +50,13 @@ const Navbar: React.FC = () => {
 
 interface MenuHeaderProps {
   text: string;
+  link?: string;
 }
 
-const MenuHeader: React.FC<MenuHeaderProps> = ({ text }) => {
+const MenuHeader: React.FC<MenuHeaderProps> = ({ text, link }) => {
   return (
     <a
-      href="#"
+      href={link}
       className="w-full font-bold text-primary transition duration-300 ease-in-out hover:text-primary/40 md:w-[100px]"
     >
       {text}
