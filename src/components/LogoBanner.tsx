@@ -1,3 +1,4 @@
+import Image from "next/image";
 import React from "react";
 import Section from "./Section";
 
@@ -13,41 +14,51 @@ const LogoBanner = () => {
         <div className="flex flex-wrap items-center justify-center gap-4">
           {/* Logo 1 */}
           <div className="flex h-32 w-32 items-center justify-center bg-gray-100">
-            <img
+            <Image
               src="https://via.placeholder.com/100x50"
               alt="Partner Logo 1"
+              width={100}
+              height={50}
               className="max-h-full"
             />
           </div>
           {/* Logo 2 */}
           <div className="flex h-32 w-32 items-center justify-center bg-gray-100">
-            <img
+            <Image
               src="https://via.placeholder.com/100x50"
               alt="Partner Logo 2"
+              width={100}
+              height={50}
               className="max-h-full"
             />
           </div>
           {/* Logo 3 */}
           <div className="flex h-32 w-32 items-center justify-center bg-gray-100">
-            <img
+            <Image
               src="https://via.placeholder.com/100x50"
               alt="Partner Logo 3"
+              width={100}
+              height={50}
               className="max-h-full"
             />
           </div>
           {/* Logo 4 */}
           <div className="flex h-32 w-32 items-center justify-center bg-gray-100">
-            <img
+            <Image
               src="https://via.placeholder.com/100x50"
               alt="Partner Logo 4"
+              width={100}
+              height={50}
               className="max-h-full"
             />
           </div>
           {/* Logo 5 */}
           <div className="flex h-32 w-32 items-center justify-center bg-gray-100">
-            <img
+            <Image
               src="https://via.placeholder.com/100x50"
               alt="Partner Logo 5"
+              width={100}
+              height={50}
               className="max-h-full"
             />
           </div>

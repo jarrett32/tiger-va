@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
+import Image from "next/image";
 import React from "react";
 import Footer from "~/components/Footer";
-import Navbar from "~/components/Navbar";
 
 const GetStarted = () => {
   return (
@@ -15,9 +15,11 @@ const GetStarted = () => {
         >
           {/* Image and Text Section */}
           <div className="flex flex-col justify-center p-8 text-foreground md:w-1/2">
-            <img
+            <Image
               src="https://via.placeholder.com/400"
               alt="Personal Assistant"
+              width={400}
+              height={400}
               className="mb-4 rounded-lg"
             />
             <h2 className="text-2xl font-bold">

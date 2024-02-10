@@ -1,7 +1,8 @@
 import { UserCircleIcon } from "@heroicons/react/24/solid";
 import Head from "next/head";
+import Image from "next/image";
 import CTA from "~/components/CTA";
-import Card, { DisclosureCard } from "~/components/Card";
+import Card from "~/components/Card";
 import DisclosureCards from "~/components/DisclosureCards";
 import Duplex from "~/components/Duplex";
 import Footer from "~/components/Footer";
@@ -42,9 +43,11 @@ export default function Home() {
 
               <div className="mt-8 md:mt-0 md:flex-1">
                 {/* Placeholder Image */}
-                <img
+                <Image
                   src="https://via.placeholder.com/400"
                   alt="Placeholder"
+                  width={400}
+                  height={400}
                   className="h-auto max-w-full rounded-lg shadow-lg"
                 />
               </div>
@@ -103,24 +106,24 @@ export default function Home() {
                   What Our Customers Say
                 </h2>
                 <div className="flex flex-col items-center justify-center gap-4 md:flex-row">
-                  <blockquote className="rounded-lg bg-white p-4 shadow">
+                  <div className="rounded-lg bg-white p-4 shadow">
                     <p className="text-secondary-foreground">
-                      "This product has changed the way we do business. Highly
-                      recommend!"
+                      &quot;This product has changed the way we do business.
+                      Highly recommend!&quot;
                     </p>
                     <footer className="mt-2 font-semibold text-foreground">
                       - Alex Smith
                     </footer>
-                  </blockquote>
-                  <blockquote className="rounded-lg bg-white p-4 shadow">
+                  </div>
+                  <div className="rounded-lg bg-white p-4 shadow">
                     <p className="text-secondary-foreground">
-                      "A must-have tool for anyone looking to improve their
-                      workflow!"
+                      &quot;A must-have tool for anyone looking to improve their
+                      workflow!&quot;
                     </p>
                     <footer className="mt-2 font-semibold text-foreground">
                       - Jamie Doe
                     </footer>
-                  </blockquote>
+                  </div>
                 </div>
               </div>
             </div>

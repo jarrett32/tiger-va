@@ -1,5 +1,6 @@
-import { AnimatePresence, motion } from "framer-motion";
+import { motion, useAnimation } from "framer-motion";
 import React from "react";
+import { useInView } from "react-intersection-observer";
 
 interface SectionProps {
   children: React.ReactNode;
@@ -18,6 +19,12 @@ const Section: React.FC<SectionProps> = ({
   className,
   animationVariant = "fadeIn",
 }) => {
+  const controls = useAnimation();
+  const { ref, inView } = useInView({
+    triggerOnce: true,
+    threshold: 0.5,
+  });
+
   const variants = {
     fadeIn: {
       hidden: { opacity: 0 },
@@ -45,21 +52,25 @@ const Section: React.FC<SectionProps> = ({
     },
   };
 
-  // Choose the correct variant based on the animationVariant prop
-  const selectedVariant = variants[animationVariant] || variants.fadeIn;
+  React.useEffect(() => {
+    if (inView) {
+      controls
+        .start("visible")
+        .catch((error) => console.error("Animation failed", error));
+    }
+  }, [controls, inView]);
 
   return (
-    <AnimatePresence>
-      <motion.div
-        className={`px-4 py-8 md:px-8 lg:px-16 ${className}`}
-        variants={selectedVariant}
-        initial="hidden"
-        whileInView="visible"
-        exit="hidden" // Define exit animations in your variants if needed
-      >
-        {children}
-      </motion.div>
-    </AnimatePresence>
+    <motion.div
+      ref={ref}
+      className={`px-4 py-8 md:px-8 lg:px-16 ${className}`}
+      variants={variants[animationVariant] || variants.fadeIn}
+      initial="hidden"
+      animate={controls}
+      // Removed exit="visible" as it's not needed for this use case
+    >
+      {children}
+    </motion.div>
   );
 };
 

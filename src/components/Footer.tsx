@@ -1,10 +1,4 @@
 import React from "react";
-import Section from "./Section";
-import Discord from "./icons/DiscordIcon";
-import Facebook from "./icons/FacebookIcon";
-import Instagram from "./icons/InstagramIcon";
-import LinkedIn from "./icons/LinkedInIcon";
-import Twitter from "./icons/TwitterIcon";
 
 const Footer = () => {
   return (

@@ -10,7 +10,7 @@ const Pricing = () => {
             Pricing Plans
           </h2>
           <p className="text-secondary-foreground">
-            Choose the plan that's right for you.
+            Choose the plan thats right for you.
           </p>
           <div className="mt-10 flex flex-col items-center justify-center gap-4 md:flex-row">
             {/* Basic Plan */}
