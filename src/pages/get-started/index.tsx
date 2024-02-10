@@ -6,7 +6,7 @@ import Navbar from "~/components/Navbar";
 const GetStarted = () => {
   return (
     <>
-      <main className="flex min-h-screen items-center justify-center bg-background">
+      <main className="flex min-h-screen items-center justify-center bg-gradient-to-tl from-primary to-white">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -61,6 +61,9 @@ const GetStarted = () => {
                 Get Started
               </button>
             </form>
+            <div className="italices p-2 text-xs text-secondary">
+              Powered by Stripe
+            </div>
           </div>
         </motion.div>
       </main>
