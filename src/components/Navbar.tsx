@@ -1,5 +1,7 @@
+"use client";
 import { Menu } from "@headlessui/react";
 import { Bars3Icon } from "@heroicons/react/24/solid";
+import router from "next/router";
 import React, { useState } from "react";
 import { Button } from "./ui/button";
 
@@ -41,7 +43,11 @@ const Navbar: React.FC = () => {
         </Menu>
       </div>
 
-      <Button variant={"accent"} className="hidden md:inline-block">
+      <Button
+        variant={"accent"}
+        className="hidden md:inline-block"
+        onClick={() => router.push("/get-started")}
+      >
         Get Started
       </Button>
     </nav>
